@@ -5,6 +5,7 @@ export function header(activePage: string = '', isHero: boolean = false): string
   
   const links = [
     { href: '/treatments', label: '진료안내', id: 'treatments' },
+    { href: '/pricing', label: '수가표', id: 'pricing' },
     { href: '/doctor', label: '의료진', id: 'doctor' },
     { href: '/mission', label: '미션', id: 'mission' },
     { href: '/content', label: '콘텐츠', id: 'content' },

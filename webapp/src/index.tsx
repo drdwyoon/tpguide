@@ -9,6 +9,7 @@ import { infoPage } from './pages/info'
 import { privacyPage } from './pages/privacy'
 import { myPage } from './pages/mypage'
 import { adminPage } from './pages/admin'
+import { pricingPage } from './pages/pricing'
 
 type Bindings = {
   SOLAPI_API_KEY: string
@@ -596,6 +597,7 @@ app.get('/sitemap.xml', (c) => {
     { loc: '/treatments/cavity', priority: '0.8', changefreq: 'monthly' },
     { loc: '/treatments/pediatric', priority: '0.8', changefreq: 'monthly' },
     { loc: '/treatments/gum', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/pricing', priority: '0.8', changefreq: 'monthly' },
     { loc: '/doctor', priority: '0.8', changefreq: 'monthly' },
     { loc: '/mission', priority: '0.7', changefreq: 'monthly' },
     { loc: '/content', priority: '0.6', changefreq: 'weekly' },
@@ -628,6 +630,9 @@ app.get('/treatments/:id', (c) => {
   if (!page) return c.notFound()
   return c.html(page)
 })
+
+// Pricing
+app.get('/pricing', (c) => c.html(pricingPage()))
 
 // Doctor
 app.get('/doctor', (c) => c.html(doctorPage()))
